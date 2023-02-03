@@ -1,9 +1,10 @@
 import "./Nav.css"
 import icon from "../assets/Calendar.png"
+import { Navbar } from "reactstrap"
 
 const Nav = () => {
     return (
-        <nav>
+        <nav className="navigation">
             <a href="/"><img src={icon} className="icon" alt="Calendar"/></a>
         </nav>
     )

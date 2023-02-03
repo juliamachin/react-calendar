@@ -1,5 +1,8 @@
 .navigation {
     background-color: darkolivegreen;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .icon {
