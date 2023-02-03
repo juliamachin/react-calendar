@@ -1,16 +1,24 @@
 import "./Home.css";
 import Calendar from "react-calendar";
 import { useState } from "react";
+import { format, parse, startOfWeek, getDay } from 'date-fns'
+import DatePicker from "react-datepicker";
+import Moment from "react-moment";
+
 
 const Home = () => {
   const [date, setDate] = useState(new Date());
   const [range, setRange] = useState(false);
   const [cycle, setCycle] = useState("28");
 
+  const addPeriod = () => {
+    setRange(true);
+  };
+
   return (
     <div className="calendar">
       <div>
-        <button onClick="">Add Period</button>
+        <button onClick={addPeriod}>Add Period</button>
         <Calendar onChange="" value={date} selectRange={range} />
       </div>
       <form>
