@@ -1,17 +1,21 @@
 import "./Home.css";
 import Calendar from "react-calendar";
+import { useState } from "react";
 
 const Home = () => {
+  const [date, setDate] = useState(new Date());
+  const [range, setRange] = useState(false);
+  const [cycle, setCycle] = useState("28");
+
   return (
     <div className="calendar">
       <div>
-        <Calendar />
+        <button onClick="">Add Period</button>
+        <Calendar onChange="" value={date} selectRange={range} />
       </div>
       <form>
         <label htmlFor="cycle">Cycle Length: </label>
-        <select
-          className="cycle-selection"
-        >
+        <select className="cycle-selection">
           <option value="21">21</option>
           <option value="22">22</option>
           <option value="23">23</option>
