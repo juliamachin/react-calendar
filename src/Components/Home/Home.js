@@ -1,15 +1,16 @@
 import "./Home.css";
 import Calendar from "react-calendar";
 import { useState } from "react";
-import { format, parse, startOfWeek, getDay } from 'date-fns'
+import { format, parse, startOfWeek, getDay } from "date-fns";
 import DatePicker from "react-datepicker";
 import Moment from "react-moment";
-
 
 const Home = () => {
   const [date, setDate] = useState(new Date());
   const [range, setRange] = useState(false);
   const [cycle, setCycle] = useState("28");
+
+  const cycleLength = parseInt(cycle);
 
   const addPeriod = () => {
     setRange(true);
@@ -19,11 +20,26 @@ const Home = () => {
     <div className="calendar">
       <div>
         <button onClick={addPeriod}>Add Period</button>
-        <Calendar onChange="" value={date} selectRange={range} />
+        <Calendar onChange={setDate} value={date} selectRange={range} />
       </div>
+      {date.length > 0 ? (
+        <p>
+          <span>Start:</span> {date[0].toDateString()}
+          &nbsp; to &nbsp;
+          <span>End:</span> {date[1].toDateString()}
+        </p>
+      ) : (
+        <p>
+          <span>Selected date:</span> {date.toDateString()}
+        </p>
+      )}
       <form>
         <label htmlFor="cycle">Cycle Length: </label>
-        <select className="cycle-selection">
+        <select
+          onChange={(event) => setCycle(event.target.value)}
+          defaultValue={cycle}
+          className="cycle-selection"
+        >
           <option value="21">21</option>
           <option value="22">22</option>
           <option value="23">23</option>
