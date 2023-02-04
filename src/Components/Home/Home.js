@@ -5,6 +5,7 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import DatePicker from "react-datepicker";
 import Moment from "react-moment";
 
+
 const Home = () => {
   const [date, setDate] = useState(new Date());
   const [range, setRange] = useState(false);
@@ -19,7 +20,7 @@ const Home = () => {
   return (
     <div className="calendar">
       <div>
-        <button onClick={addPeriod}>Add Period</button>
+        <button className="button-62" role="button" onClick={addPeriod}>Add Period</button>
         <Calendar onChange={setDate} value={date} selectRange={range} />
       </div>
       {date.length > 0 ? (

@@ -1,5 +1,5 @@
 import "./Nav.css";
-import icon from "../assets/Calendar.png";
+import icon from "../assets/Calendar 2.png";
 
 const Nav = () => {
   return (
