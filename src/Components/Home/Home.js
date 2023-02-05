@@ -59,14 +59,14 @@ const Home = () => {
         </select>
       </form>
       <div className="col-md-3 m-3 box ">
-        <p>Next Period Estimate</p>
+        <p>Next Period Estimate:</p>
 
         <Moment format="MMMM Do, YYYY" add={{ days: cycleLength - 1 }}>
           {date[0]}
         </Moment>
       </div>
       <div className="col-md-3 m-3 box ">
-        <p>Approximate Ovulation Day</p>
+        <p>Approximate Ovulation Day:</p>
 
         <Moment format="MMMM Do, YYYY" add={{ days: cycleLength - 1 - 14 }}>
           {date[0]}
